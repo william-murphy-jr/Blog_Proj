@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node_modules/nodemon/bin/nodemon.js blog.js"
   },
-  "author": "murphy@tlmworks.org",
+  "author": "bill559m@gmail.com",
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
