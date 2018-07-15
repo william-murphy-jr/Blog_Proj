@@ -1,0 +1,65 @@
+<!-- views/layouts/blog-page.handlebars -->
+
+<div class="container">
+
+
+    <!-- <div class="jumbotron text-center"> -->
+    <div class="text-center">
+        <h1><span class="fa fa-lock"></span> Welcome to Murph'z Blogging Service</h1>
+
+        <div class="text-left">
+        </div>
+
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
+        <a href="/user/new" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+
+        <br />
+        <br />
+
+        <div class="row">
+
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-left">
+                <div class="text-left panel panel-info">
+                    <div class="panel-heading">
+                        <h4>{{name}}&nbsp {{lastModified}}</h4>
+                    </div>
+                <div class="panel-body">
+                    <p>{{blog}}</p>
+                    <br />
+
+                    <li class="list-group-item text-center"><a href="/project/{{_id}}/comment/new">Make a comment on {{name}}'s blog.</a></li>      
+
+                    <li class="list-group-item text-center"><a href="/home/find/{{_bloggerId}}">View more of {{name}}'s blogs.</a></li>
+                </div>
+            </div>
+                
+           </div>
+
+           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
+                <div class="text-left panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="text-center">Comments</h4>
+                        </div>
+                        <div class="panel-body">
+                        {{#if comments}}
+                            {{#each comments}}
+                                        <div>
+                                            <h4>{{commentName}}</h4>
+                                            <p>{{this.createdOn}}</p>
+                                            <p>{{commentDesc}}</p>
+                                            <p>by: {{this.name}}</p>
+                                            <hr />
+                                        </div>
+                            {{/each}}
+                        {{else}}
+                            <h5>No comments</h5>
+                        {{/if}}
+                        </div>
+                </div>
+            </div>
+                     
+        </div>
+
+    </div>
+
+</div>

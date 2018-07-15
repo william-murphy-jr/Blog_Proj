@@ -1,0 +1,21 @@
+<!-- views/layouts/user-logout-form.handlebars -->
+
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+<h1>{{title}}</h1>
+<p><strong>{{name}}</strong>, are you sure you want to logout?.</p>
+
+    <form id="frmUserLogout" method="post" action="">
+        <input type="hidden" name="_id" id="_id" class="form-control" value="{{_id}}">
+        <div class="form-group">
+            <button type="submit" class="btn btn-warning btn-lg">Log Me Out</button>
+        </div>
+    </form>
+    <br />
+        <a  class="btn btn-warning btn-lg" href="/user">NO</a>
+
+    </div>
+
+</div>

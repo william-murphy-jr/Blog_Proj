@@ -1,0 +1,33 @@
+<!-- views/layouts/blogs.handlebars -->
+
+<div class="container">
+
+
+    <!-- <div class="jumbotron text-center"> -->
+    <div class="text-center">
+        <h1><span class="fa fa-lock"></span> Welcome to Murph'z Blogging Service</h1>
+
+        <div class="text-left">
+            <p>You have reached Murph'z Blogging Service. Please log in if have an account and sign up if you do not have an account. </p>
+            If you like you can just view the blogs below.
+        </div>
+
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
+        <a href="/user/new" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+        <br />
+        <br />
+    </div>
+
+    <div class="text-left panel panel-info">
+        <div class="panel-heading">
+            <p>Name:{{name}}</p>
+        </div>
+        {{#each blogs}}
+        <div class="panel-body">
+            <li class="list-group-item"><a href="/home/blog/{{_id}}">{{projectName}}</a> -- {{modifiedOn}}</li>            
+        </div>
+        {{/each}}
+    </div>
+
+
+</div>

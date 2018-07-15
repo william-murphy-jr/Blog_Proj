@@ -1,0 +1,52 @@
+<!-- views/layouts/blog-comment-page.handlebars -->
+
+<div class="container">
+
+
+    <!-- <div class="jumbotron text-center"> -->
+    <div class="text-center">
+        <h1><span class="fa fa-lock"></span> Welcome to Murph'z Blogging Service</h1>
+
+        <div class="text-left">
+        </div>
+
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Login</a>
+        <a href="/user/new" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+        <h3>Blogger: {{name}}</h3>
+
+       <div class="text-left">
+		        <p>{{blog}}</p>
+		        <br />
+       	
+       </div>
+
+       <form id="frmProject" method="post" action="" enctype="application/x-www-form-urlencoded">
+
+           <input type="hidden" name="_method" value="{{method}}">
+
+           <!-- <label for="commentArea">Blog Title</label>
+           <input type="text" id="commentArea" name="projectName" value="{{name}}">
+
+           <br />
+           <br />  -->
+
+           <div>
+                <label for="commentName">Title Your Comment</label>
+                <input type="text" id="commentName" name="commentName" value="{{commentName}}">
+           </div>
+           <div>
+                <textarea  type="text" id="commentDesc"  class="form-control" name="commentDesc" rows="4"  placeholder="Make Comments Here">{{commentsDesc}}</textarea><br />
+                <!-- <textarea  type="text" id="tasks" name="tasks" rows="10" cols="50" placeholder="Start Blog Here" value="{{tasks}}">{{tasks}}</textarea><br /> -->
+           </div>
+
+           <button type="submit" class="btn btn-primary">{{buttonText}}</button>
+        
+           <!-- <input type="submit" value="{{buttonText}}" id="submitBtn"><br /> -->
+       </form>
+
+
+        <li class="list-group-item"><a href="/home/find/{{bloggerid}}">View more of {{name}}'s blogs.</a></li>
+       
+    </div>
+
+</div>

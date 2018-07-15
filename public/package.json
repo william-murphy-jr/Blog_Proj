@@ -1,0 +1,16 @@
+{
+  "name" : "website-using-express",
+  "version" : "0.0.1",
+  "description": "this follows the web dev w/node & express tutorial & we are creating a blogging service",
+  "scripts" : {
+    "start" : "node_modules/nodemon/bin/nodemon.js blog.js"
+  },
+  "dependencies" : {
+    "express" : "latest",
+    "express3-handlebars": "^0.5.1"
+  },
+  "devDependencies": {
+    "chai": "1.10.0",
+    "mocha": "latest"
+  }
+}

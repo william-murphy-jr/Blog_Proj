@@ -1,0 +1,51 @@
+<!-- views/layouts/project-form.handlebars -->
+
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+    <h1>{{title}}</h1>
+    <h2>{{subtitle}}</h2>
+    <h2>{{name}}</h2>
+    <p>Email: {{email}}</p>
+
+  
+    <form id="frmProject" method="post" action="" enctype="application/x-www-form-urlencoded">
+
+        <input type="hidden" name="_method" value="{{method}}">
+
+        <label for="blogArea">Post Title</label>
+        <input type="text" id="projectName" name="projectName" value="{{projectName}}">
+
+        <br />
+        <br /> 
+
+        <div>
+            <label for="blogArea">Blog</label>
+        </div>
+        <div>
+            <textarea  type="text" id="tasks"  class="form-control" name="tasks" rows="4"  placeholder="Start Blog Here">{{tasks}}</textarea><br />
+             <!-- <textarea  type="text" id="tasks" name="tasks" rows="10" cols="50" placeholder="Start Blog Here" value="{{tasks}}">{{tasks}}</textarea><br /> -->
+        </div>
+
+        <button type="submit" class="btn btn-primary">{{buttonText}}</button>
+     
+        <!-- <input type="submit" value="{{buttonText}}" id="submitBtn"><br /> -->
+    </form>
+    <br />
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/user">View All Blogs</a></li>
+                <li><a href="/user/edit">Edit Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    </div>
+
+</div>

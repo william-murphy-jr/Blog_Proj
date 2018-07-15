@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Murph'z Blog Service</title>
+    <!-- <link rel="stylesheet" href="/bootstrap-3.3.2/css/bootstrap.css">  -->
+    <!-- <link rel="stylesheet" href="/font-awesome-4.6.3/css/font-awesome.css"> <!-- load fontawesome --> -->
+	<style type="text/css">
+		#fileInput {
+			display: none;
+		}
+
+		#dropBox {
+			margin: 15px;
+			width: 300px;
+			height: 300px;
+			border: 5px dashed gray;
+			border-radius: 8px;
+			background: lightyellow;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			text-align: center; 
+		}
+		
+		#dropBox div {
+			margin: 100px 70px;
+			color: orange;
+			font-size: 25px;
+			font-family: Verdana, Arial, sans-serif;
+		}
+
+	</style>
+
+    {{#if showTests}}
+        <!-- <link rel="stylesheet" type="text/css" href="/vendor/mocha.css"> -->
+    {{/if}}
+    <!-- <script type="text/javascript" src="/vendor/jquery.js"></script> -->
+    <!-- <script type="text/javascript" src="/vendor/handlebars-v4.0.5.js"></script> -->
+
+
+</head>
+<body>
+
+
+<h3>Drop</h3>
+
+	    <input id="fileInput" type="file" name="picture">
+	    <button id="grabBnt">Grab a Pictute</button>
+
+	    <div id="dropBox">
+	    	<!-- <div>Drop your image here...</div> -->
+	    	<div id="innerDropBox">Test</div>
+	    </div>	
+
+
+
+    <script type="text/javascript">
+	    var picInput, dropBox, grabBnt, fileInput;
+
+	    grabBnt = document.getElementById('grabBnt');
+	    fileInput = document.getElementById('fileInput');
+
+
+
+	    window.onload = function() {
+	    	dropBox = document.getElementById('dropBox');
+	    	dropBox.ondragenter = ignoreDrag;
+	    	dropBox.ondragover = ignoreDrag;
+	    	dropBox.ondragleave = function(e) {
+	    		dropBox.style.backgroundColor = "lightyellow";
+	    		console.log('leave');
+	    		return false;
+	    	}
+	    	dropBox.drop = drop;
+	    	// dropBox.style.backgroundColor = "orange";
+	    };
+
+	    function ignoreDrag(e) {
+	    	e.stopPropagation();
+	    	e.preventDefault();
+
+	    	// window.stopPropagation();
+	    	// window.preventDefault();
+
+	    	dropBox.style.backgroundColor = "yellow";
+	    	console.log("In ignogeDrag");
+	    	return false;
+	    };
+
+	    function drop(e) {
+	    	// Cancel this event for everyone else.
+	    	e.stopPropagation();
+	    	e.preventDefault();
+	    	console.log("In Drop");
+
+	    	// Get the dragged-in files.
+	    	var data = e.dataTransfer;
+
+	    	// var file.target.files[0];
+
+	    	var files = data.files;
+
+	    	// Pass them to the file-processing function
+	    	processFiles(e);
+	    	// processFiles(files);
+
+	    };
+
+	    // function processFiles(files) {
+	    function processFiles(e) {
+	    	// var file = files[0];
+	    	var file = e.target.files[0];
+	    	// console.log('files: ', file)
+	    	console.log('file: ', file)
+
+	    	// Create the FileReader
+	    	var reader = new FileReader();
+
+	    	// Tell it what to do when the URL is ready
+	    	reader.onload = function(e) {
+	    		dropBox.style.backgroundImage = "url('" + e.target.result + "')";
+	    		console.log(e.target.result)
+	    	};
+
+	    	// Start reading the image
+	    	reader.readAsDataURL(file);
+
+	    }
+
+	    function showFileInput() {
+	    	var fileInput = document.getElementById('fileInput');
+	    	fileInput.click();
+	    };
+
+	    picInput = document.getElementById('pic');
+	    
+	    console.log(picInput);
+	    console.log('grabBnt: ', grabBnt);
+	    console.log('fileInput: ', fileInput);
+
+	    fileInput.addEventListener('change', processFiles);
+	    grabBnt.addEventListener('click', showFileInput);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<!-- views/layouts/project-page.handlebars -->
+
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1>Mongoose Blogging Page</h1>
+
+    <div class="row">
+
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-left">
+            <div class="text-left panel panel-info">
+                <div class="panel-heading">
+                    <h2>{{projectName}}</h2>
+                    <p>{{name}}'s Post</p>
+                    <p>Posted on: {{modifiedOn}}</p>                
+                </div>
+                <div class="panel-body">
+                    <h3>Blogs</h3>
+                    <p class="">{{tasks}}</p>
+                    <a href="/user" class="btn btn-default btn-sm">Back To My Blogs</a>
+                </div>
+                <div class="panel-footer" style="height: 3.75em;">
+                    <a href="/project/edit/{{projectID}}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="/project/delete/{{projectID}}" class="btn btn-warning btn-sm">Delete</a>
+                    <a href="/logout" class="btn btn-danger btn-sm pull-right">Logout</a>
+                    <hr />
+                </div>                
+            </div>
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-left">
+             <div class="text-left panel panel-info">
+                     <div class="panel-heading">
+                         <h4 class="text-center">Comments</h4>
+                     </div>
+                     <div class="panel-body">
+
+                        {{#if comments}}
+                            {{#each comments}}
+                                         <div>
+                                             <h4>{{commentName}}</h4>
+                                             <p>{{this.createdOn}}</p>
+                                             <p>{{commentDesc}}</p>
+                                             <p>by: {{this.name}}</p>
+                                             <hr />
+                                         </div>
+                            {{/each}}
+                        {{else}}
+                            <h5>No comments</h5>
+                        {{/if}}
+                     </div>
+             </div>
+         </div>
+
+
+    </div>
+
+
+    </div>
+</div>
+

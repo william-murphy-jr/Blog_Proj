@@ -1,0 +1,52 @@
+<!-- views/layouts/user-page.handlebars -->
+
+<script type="text/javascript">
+    var userID = "{{userID}}";
+</script>
+<script type="text/javascript" src="/js/user.js"></script>
+
+<div  class="container">
+    <div class="col-md-8 col-md-offset-2" >
+    <!-- <div class="col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2" > -->
+        <h1>Mongoose Blogging</h1>
+        <h2>{{name}}</h2>
+        <p>Email: {{email}}</p>
+
+        <!-- <h3>Blogs</h3> -->
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/project/new">New Post</a></li>
+                    <li><a href="/user/edit">Edit User Profile</a></li>
+                    <li><a href="/user/delete">Delete user</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-right"><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+            
+            <div id="myprojects"></div>
+            <script id="myprojectsTemplate" type="text/x-handlebars-template">
+                <div class="text-left panel panel-info">
+                    <div class="panel-heading">
+                        <h4>My Blogs</h4>
+                    </div>
+                        \{{#if blogs}}
+                            \{{#each blogs}}
+                            <div class="panel-body">
+                                <a href="/project/\{{_id}}">\{{projectName}}&nbsp&nbsp--&nbsp&nbspLast Post: \{{lastModified}}
+                                </a>
+                            </div>
+                            \{{/each}}
+                        \{{else}}
+                        <div class="panel-body">
+                          <p>You do not have any blogs!</p>
+                        </div>
+                        \{{/if}}
+                </div>
+            </script>
+    </div>
+</div>

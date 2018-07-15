@@ -1,0 +1,32 @@
+<!-- views/layouts/search-results.handlebars -->
+
+<div  class="container">
+    <div class="col-md-8 col-md-offset-2" >
+        <h1>Search Results</h1>
+            {{#if results}}
+                {{#each results}}
+
+                    <div class="text-left panel panel-info">
+                        <div class="panel-heading">
+                            <a href="/home/find/{{_id}}"><h4>{{name}}&nbsp&nbsp--&nbsp&nbspPosted: {{modifiedOn}}</h4></a>
+                        </div>
+                            <a href="/home/blog/{{_id}}">{{tasks}}</a>                            
+                        {{#each blogs}}
+
+                        <div class="panel-body">
+                            <h4>{{projectName}}</h4>
+                            <p>{{lastModified}}</p>
+                            <a href="/home/blog/{{_id}}">{{tasks}}</a>                            
+                        </div>
+
+                        <hr />
+                        {{/each}}   
+                                             
+                    </div>
+                {{/each}}
+            {{else}}
+                <h1 class="jumbotron">There are no results for your search!!!</h1>
+                <h3>Please resubmit or refine your search!</h3>
+            {{/if}}
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<!-- views/layouts/project-delete-form.handlebars -->
+
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+    <h1>{{title}}</h1>
+    <p><strong>{{name}}</strong>, are you sure you want to permanently delete this blog.</p>
+
+    <form id="frmProjectDelete" method="post" action="" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_id" id="_id" value="{{_id}}"><br /><br />
+
+            <button type="submit" class="btn btn-warning btn-lg">Yes please delete my post!</button>
+        </form>
+        <br />
+            <a  class="btn btn-warning btn-lg" href="/user">NO</a>
+    </div>
+    
+</div>>

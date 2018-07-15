@@ -1,0 +1,21 @@
+<!-- views/layouts/user-delete-form.handlebars -->
+
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1>{{title}}</h1>
+        <br />
+        <p><strong>{{name}}</strong>, are you sure you want to permanently delete your account? The email address on this accont is <strong>{{email}}</strong>.</p>
+
+        <form id="frmUserDelete" method="post" action="">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_id" id="_id"  class="form-control" value="{{_id}}">
+            <div class="form-group">
+                <button type="submit" class="btn btn-warning btn-lg">Yes please delete it!"</button>
+            </div>
+        </form>
+        <a class="btn btn-warning btn-lg" href="/user">Do Not delete it!"</a>
+
+    </div>
+</div>

@@ -1,0 +1,9 @@
+data/db/journal/WiredTigerLog.0000000012 filter=lfs diff=lfs merge=lfs -text
+data/db/journal/WiredTigerLog.0000000001 filter=lfs diff=lfs merge=lfs -text
+data/db/journal/WiredTigerLog.0000000003 filter=lfs diff=lfs merge=lfs -text
+data-bak/db/journal/WiredTigerPreplog.0000000003 filter=lfs diff=lfs merge=lfs -text
+data-bak/db/journal/WiredTigerPreplog.000000000 filter=lfs diff=lfs merge=lfs -text
+data-bak/db/journal/WiredTigerLog.0000000011 filter=lfs diff=lfs merge=lfs -text
+blog_database/db/journal/WiredTigerLog.0000000003 filter=lfs diff=lfs merge=lfs -text
+blog_database/db/journal/WiredTigerPreplog.0000000001 filter=lfs diff=lfs merge=lfs -text
+data/db/journal/WiredTigerPreplog.0000000001 filter=lfs diff=lfs merge=lfs -text
