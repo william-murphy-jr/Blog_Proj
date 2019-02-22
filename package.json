@@ -4,7 +4,7 @@
   "description": "It's pretty cool.",
   "main": "blog.js",
   "scripts": {
-    "start": "node_modules/nodemon/bin/nodemon.js blog.js"
+    "start": "nodemon blog.js"
   },
   "author": "bill559m@gmail.com",
   "license": "ISC",
@@ -16,12 +16,12 @@
     "connect-mongodb-session": "^2.0.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
-    "express-session": "file://express-session",
+    "express-session": "^1.15.6",
     "express3-handlebars": "0.5.1",
-    "http": "",
+    "http": "0.0.0",
     "method-override": "^2.3.10",
-    "mongoose": "^5.1.4",
-    "morgan": "^1.9.0",
+    "mongoose": "^5.4.14",
+    "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "session-mongoose": "^0.5.2"

@@ -6,7 +6,9 @@ var mongoose = require("mongoose");
 var bcrypt = require('bcrypt-nodejs');
 
 var dbURI = 'mongodb://localhost/blog_database';
-var db = mongoose.connect(dbURI);
+var db = mongoose.connect(dbURI, {
+    useNewUrlParser: true
+});
 
 mongoose.connection.on('connected', function () {
     console.log('Mongoose connected to ' + dbURI);
