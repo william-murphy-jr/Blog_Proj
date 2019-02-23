@@ -89,7 +89,3 @@ projectSchema.statics.findByUserID = function (userid, callback) {
    mongoose.model( 'Project', projectSchema );
 
    module.exports = db;
-
-
-
-

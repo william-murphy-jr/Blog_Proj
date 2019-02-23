@@ -130,6 +130,3 @@ module.exports = function(passport) {
 
 
 };
-
-
-

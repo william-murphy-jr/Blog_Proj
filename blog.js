@@ -100,7 +100,8 @@ app.use(methodOverride(function(req, res){
 }));
 
 // ROUTES -- All routes are in the routes directory
-require('./routes/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+// load our routes and pass in our app and fully configured passport
+require('./routes/routes.js')(app, passport); 
 
 app.use(express.static(__dirname + '/public'));
 
@@ -122,7 +123,3 @@ app.listen(app.get('port'), function(){
   console.log("Live at Port " + app.get('port') 
     + " \nPress Control-C to terminate node server");
 });
-
-
-
-

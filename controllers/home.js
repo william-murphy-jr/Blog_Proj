@@ -119,7 +119,3 @@ exports.displayBlog = function(req, res) {
 
     })
 };
-
-
-
-
